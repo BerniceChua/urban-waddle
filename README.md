@@ -1,0 +1,1 @@
+urban-waddle aims to enhance the self-tourism or group tourism experience through technological assistance with identifying points of interests near the user and notifying the user through a simple geolocation vehicle.
