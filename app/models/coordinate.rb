@@ -1,4 +1,5 @@
 class Coordinate < ActiveRecord::Base
+  extend ::Geocoder::Model::ActiveRecord
   # Remember to create a migration!
 
   geocoded_by :full_street_address   # can also be an IP address
