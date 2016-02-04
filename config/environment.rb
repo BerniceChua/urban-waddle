@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 
 require 'geocoder'
+require 'google/apis/drive_v2'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
