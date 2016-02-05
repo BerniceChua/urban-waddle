@@ -31,10 +31,10 @@ get "/coordinates/:id" do
     }
   }
 
-  respond_to do |format|
-    format.html
-    format.json { render json: @geojson }  # respond with the created JSON object
-  end
+  # respond_to do |format|
+  #   format.html
+  #   format.json { render json: @geojson }  # respond with the created JSON object
+  # end
 
   if @errors
     @errors = @coordinate.errors.full_messages
