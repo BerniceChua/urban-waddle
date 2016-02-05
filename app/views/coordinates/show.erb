@@ -1,0 +1,22 @@
+<p>Address: </p>
+<p><%= @coordinate.address %></p>
+
+<p>Latitude: </p>
+<p><%= @coordinate.latitude %></p>
+
+<p>Longitude: </p>
+<p><%= @coordinate.longitude %></p>
+
+<div id='map-div'></div>
+
+<% latitude = @coordinate.latitude %>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmVybmljZWNodWEiLCJhIjoiY2lrOHZsODJnMDByNnYwa3Byejd4azdwdyJ9.ULosBQzbIJtQg88gDsQExA';
+var map = new mapboxgl.Map({
+    container: 'map-div', // container id
+    style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+    center: [<%= @coordinate.latitude %>,<%= @coordinate.longitude %>], // starting position
+    zoom: 9 // starting zoom
+});
+</script>

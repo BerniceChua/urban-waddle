@@ -19,6 +19,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'geocoder'
+gem 'sinatra-respond_to'
 
 group :test do
   gem 'faker'
