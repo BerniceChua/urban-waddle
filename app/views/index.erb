@@ -1,39 +1,12 @@
 <div class="container">
   <h1>Welcome to Pokemon Go For Tourism!</h1>
-  <p>Hello, world!</p>
+  <p>(I shall call it "Mural Go")</p>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <a href="/coordinates/new">Make a New One!</a>
 
-  <form>
-    <label for="the_address">Street Address: <br>
-      <input type="text" name="address" placeholder="Address">
-    </label><br>
-    <br>
-    <label for="the_latitude">Latitude: <br>
-      <input type="number" name="latitude" placeholder="Latitude">
-    </label><br>
-    <br>
-    <label for="the_longitude">Longitude: <br>
-      <input type="number" name="longitude" placeholder="Longitude: ">
-    </label><br>
-    <br>
-    <input type="submit" value="Find It!!">
-  </form>
+  <p>Your Current Location:</p>
+  (put google maps API here)
+
+  <p>Nearby:</p>
+  (put partial here)
 </div>

@@ -9,12 +9,32 @@ post "/coordinates" do
     redirect "/coordinates/#{@coordinate.id}"
   else
     @errors = @coordinate.errors.full_messages
+    erb :"/coordinates/_not_logged_in_not_current_coordinate_error_message"
   end
-
 end
 
 get "/coordinates/:id" do
   @coordinate = Coordinate.find(params[:id])
+  @geojson = Array.new
+
+  @geojson << {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [@coordinate.longitude, @coordinate.latitude]
+    },
+    properties: {
+      address: @coordinate.address,
+      :'marker-color' => '#00607d',
+      :'marker-symbol' => 'circle',
+      :'marker-size' => 'medium'
+    }
+  }
+
+  respond_to do |format|
+    format.html
+    format.json { render json: @geojson }  # respond with the created JSON object
+  end
 
   if @errors
     @errors = @coordinate.errors.full_messages
